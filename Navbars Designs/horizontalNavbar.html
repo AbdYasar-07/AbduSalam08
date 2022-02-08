@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Nav-Bar</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+        background-color: #ededed;
+    }
+
+    * {
+        list-style-type: none;
+        text-decoration: none;
+        outline: none;
+    }
+
+    *::selection {
+        color: #7b5ce6;
+        background-color: #fff;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        margin-right: 80px;
+        margin-left: 80px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 97vh;
+        background: linear-gradient(360deg, rgba(0, 0, 255, 0.644), rgba(255, 192, 203, 0.507));
+        border-radius: 15px;
+        position: relative;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.400);
+        transition: all .3s;
+    }
+
+    .container::after {
+        content: '';
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: blue;
+        z-index: -2;
+        border-radius: 15px;
+        clip-path: circle(25% at left -0%);
+
+    }
+
+    .container::before {
+        content: '';
+        position: absolute;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: palevioletred;
+        z-index: -2;
+        border-radius: 15px;
+        clip-path: circle(25% at right 70%);
+
+    }
+
+    .navbar {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 150px;
+        height: 97vh;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.644);
+    }
+
+    .nav-logo {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+        padding: 10px;
+    }
+
+    .nav-logo i {
+        transform: scale(3.8);
+        margin-top: 20px;
+        background-color: #8768f8;
+        padding: 3px 4px;
+        border-radius: 50px;
+        backdrop-filter: blur(5px);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.644);
+
+    }
+
+    .nav-logo h3 {
+        margin-top: 30px;
+        padding: 10px 0px;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+
+    .hoz-nav {
+        display: flex;
+        top: 31.5%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        height: 350px;
+        width: 80px;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.644);
+        margin-left: 30px;
+        position: absolute;
+    }
+
+    .nav-icons {
+        display: flex;
+        height: 350px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-icons i {
+        transform: scale(1.8);
+        cursor: pointer;
+        color: white;
+        text-align: center;
+        transition: all .3s;
+    }
+
+
+    .nav-items {
+        width: 0px;
+        display: flex;
+        position: absolute;
+        background-color: transparent;
+        height: 350px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-weight: bold;
+        letter-spacing: 1px;
+        left: 74.6%;
+        top: 31.6%;
+        transition: all .3s;
+        transition: all .3s;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        backdrop-filter: blur(5px);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.300);
+
+    }
+
+    .lists {
+        width: 0px;
+        display: flex;
+        position: absolute;
+        background-color: transparent;
+        height: 350px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: all .3s;
+        transition: all .3s;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.300);
+        overflow: hidden;
+
+    }
+
+    .nav-items li a {
+        cursor: pointer;
+        padding: 8px;
+        color: white;
+        border-radius: 50px;
+        transition: all .3s;
+    }
+
+    .nav-items li a:hover {
+        background-color: #fff;
+        color: #7b5ce6;
+    }
+
+    .angles {
+        position: absolute;
+        right: -15px;
+    }
+
+    .angles i {
+        transform: scale(1.2) rotate(0deg);
+        background-color: #7b5ce6;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.644);
+        padding: 5px;
+        padding-left: 6px;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .angles i.rotate {
+        transform: scale(1.2) rotate(90deg);
+        background-color: palevioletred;
+    }
+
+    .blur {
+        width: 100%;
+        height: 97vh;
+        backdrop-filter: blur(5px);
+        z-index: -1;
+        position: absolute;
+        border-radius: 15px;
+    }
+
+    .changewidth {
+        width: 250px;
+    }
+
+    .visible {
+        visibility: visible;
+    }
+
+    @media (max-width:1125px) {
+
+
+        .container {
+            margin: 0;
+            align-items: flex-start;
+        }
+
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            width: 100%;
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0;
+            height: 60px;
+        }
+
+        .nav-logo i {
+            transform: scale(2);
+            margin: 0;
+        }
+
+        .nav-logo h3 {
+            margin: 0;
+            margin-left: 25px;
+        }
+
+        .hoz-nav {
+            display: none;
+
+        }
+
+        .nav-items {
+            left: 1%;
+            top: 240%;
+        }
+
+    }
+
+    @media (max-width:800px) {
+        .nav-logo {
+            font-size: 13px;
+        }
+
+        .nav-items {
+            transform: scale(0.8);
+        }
+    }
+
+    @media (max-width:500px) {
+        .nav-items {
+            top: 20%;
+            transform: scale(0.7);
+        }
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <div class="blur">
+
+        </div>
+
+        <div class="navbar">
+
+            <div class="nav-logo">
+                <i class="fas fa-user"></i>
+                <h3>Abdul Salam</h3>
+            </div>
+
+            <div class="hoz-nav">
+
+                <div class="nav-icons">
+
+                    <i class="fas fa-home"></i>
+                    <i class="fas fa-info"></i>
+                    <i class="fas fa-mail-bulk"></i>
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+            </div>
+
+            <div class="nav-items" id="navitems">
+
+                <div class="lists">
+
+                    <li class="li"><a href="">HOME </a></li>
+                    <li class="li"><a href="">ABOUT </a></li>
+                    <li class="li"><a href="">CONTACT </a></li>
+                    <li class="li"><a href="">REGISTER</a></li>
+                    <li class="li"><a href="">LOGIN </a></li>
+
+                </div>
+
+                <div class="angles">
+                    <i class="fas fa-bars" id="open"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script src=" /jquery.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#open').click(function () {
+
+            $('#navitems').toggleClass('changewidth');
+            $('.lists').toggleClass('changewidth');
+            $('.li').toggleClass('visible');
+            $('.angles i').toggleClass('rotate');
+        });
+
+    });
+</script>
+
+</html>

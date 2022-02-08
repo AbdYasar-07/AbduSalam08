@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Nav-Bar</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.structure.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.theme.css">
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'poppins';
+        list-style-type: none;
+        transition: all .3s;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+
+    body {
+        width: 100%;
+        background-color: #eff5ff;
+        overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        background-color: #fff;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        width: 5px;
+        background: linear-gradient(#ff7200, #ff0040);
+        border-radius: 50px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.116);
+        height: 70px;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+    }
+
+    nav .nav__logo i {
+        font-size: 30px;
+        color: #000;
+        font-weight: bolder;
+        margin-left: 30px;
+        letter-spacing: 5px;
+    }
+
+    .nav__logo::first-letter {
+        font-size: 50px;
+        color: #ff0040;
+    }
+
+    .nav__navlinks {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .nav__navlinks li a {
+        color: #000;
+        font-weight: bolder;
+        letter-spacing: 1px;
+        font-size: 15px;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav__navlinks li:hover a {
+        border-bottom: 1px solid #ff0040;
+    }
+
+    .nav__navlinks li {
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+
+    .c1 {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .c1__imgs {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .c1__imgs .ring {
+        border-radius: 50%;
+        z-index: 2;
+        height: 260px;
+        width: 260px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.281);
+        background: linear-gradient(#ff7200, #ff0040);
+        cursor: pointer;
+    }
+
+    .c1__imgs .ring {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .c1__imgs .ring h1 {
+        letter-spacing: 5px;
+        font-weight: bold;
+        font-size: 40px;
+        font-style: italic;
+        color: rgb(255, 255, 255);
+    }
+
+    .ring h1::first-letter {
+        font-size: 80px;
+    }
+
+    .c1__imgs span {
+        width: 260px;
+        height: 260px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.192);
+        animation: span1 3s .2s infinite both;
+    }
+
+    .c1__imgs span:nth-child(1) {
+        width: 260px;
+        height: 260px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.192);
+        animation: span1 3s 2s infinite both;
+    }
+
+    @keyframes span1 {
+        0% {
+            width: 260px;
+            height: 260px;
+            opacity: 1;
+        }
+
+        100% {
+            width: 360px;
+            height: 360px;
+            opacity: 0;
+        }
+
+    }
+
+    @keyframes span2 {
+        0% {
+            width: 260px;
+            height: 260px;
+            opacity: 1;
+        }
+
+        100% {
+            width: 360px;
+            height: 360px;
+            opacity: 0;
+        }
+
+    }
+
+    .c1__texts {
+        margin-left: 100px;
+    }
+
+    .c1__texts h1 {
+        font-size: 60px;
+        text-align: center;
+        font-weight: bolder;
+        color: #1a1c1d;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .c2 {
+        padding: 20px 50px;
+        text-align: justify;
+        background: linear-gradient(#ff7200, #ff0040);
+        color: #fff;
+        box-shadow: 2px 0px 10px 10px #ff7200;
+    }
+
+    .fa-times {
+        display: none;
+    }
+
+    .fa-bars {
+        display: none;
+    }
+
+
+
+
+    /* Toggle class */
+
+
+
+
+    .changebgc {
+        background-color: #00ff;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #nvl.changetextc,
+    #logotext.changetextc,
+    .fa-bars.changetextc {
+        color: #eff5ff;
+    }
+
+    .nav__navlinks.slidedown {
+        top: 0;
+        opacity: 1;
+    }
+
+    .click {
+        transform: scale(.95);
+        transform: scale(.95);
+    }
+
+
+
+    /* media Queries */
+
+    @media (max-width:950px) {
+
+        .nav__navlinks {
+            position: absolute;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            top: -1000%;
+            opacity: 0;
+            background-color: #000;
+            height: 100vh;
+            width: 100vw;
+        }
+
+
+        nav .fa-bars {
+            font-size: 25px;
+            display: block;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        nav .nav__logo {
+            margin-left: 0;
+            padding: 0;
+        }
+
+        .c2 {
+            padding: 10px 20px;
+        }
+
+        .nav__navlinks .fa-times {
+            display: block;
+            position: absolute;
+            top: 4%;
+            right: 10%;
+            font-size: 25px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .nav__navlinks li a {
+            color: #eff5ff;
+            font-size: 25px;
+        }
+
+
+        .c1 {
+            flex-direction: column;
+        }
+
+        .c1 .c1__imgs {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .c1__imgs .ring {
+            width: 180px;
+            height: 180px;
+        }
+
+        .c1__imgs .ring h1 {
+            font-size: 20px;
+        }
+
+        .c1 .c1__texts {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .c1__texts h1 {
+            font-size: 40px;
+        }
+
+        .nav__logo i {
+            margin-left: 0 !important;
+        }
+
+        @keyframes span1 {
+            0% {
+                width: 180px;
+                height: 180px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 280px;
+                height: 280px;
+                opacity: 0;
+            }
+
+        }
+
+        @keyframes span2 {
+            0% {
+                width: 180px;
+                height: 180px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 280px;
+                height: 280px;
+                opacity: 0;
+            }
+
+        }
+
+    }
+</style>
+
+<body>
+
+
+    <nav>
+        <div class="nav__logo">
+            <i id="logotext">GT</i>
+        </div>
+
+        <div class="nav__navlinks">
+
+            <i class="fas fa-times"></i>
+
+            <li><a href="#" id="nvl">HOME</a></li>
+            <li><a href="#" id="nvl">ABOUT</a></li>
+            <li><a href="#" id="nvl">CONTACT</a></li>
+            <li><a href="#" id="nvl">SERVICES</a></li>
+            <li><a href="#" id="nvl">GET STARTED !</a></li>
+
+        </div>
+
+
+        <i class="fas fa-bars"></i>
+
+
+
+    </nav>
+
+
+
+    <div class="c1">
+
+        <div class="c1__imgs">
+            <span></span>
+            <span></span>
+
+            <div class="ring">
+
+                <h1>GT</h1>
+            </div>
+
+        </div>
+
+        <div class="c1__texts">
+
+            <h1>Let's create some<br> Awesome !</h1>
+
+        </div>
+
+    </div>
+
+
+    <div class="c2">
+
+        <div class="c2__sampletexts">
+            <h1 style="margin: 20px 0; text-align: center;"> These are sample texts so, Please ignore this.</h1>
+            <p> lorem obcaecati pariatur reiciendis qui molestiae. Possimus, accusantium nisi saepe quas, esse omnis
+                ipsam
+                praesentium, labore nesciunt et id odio.
+                Ab, natus assumenda consequatur quaerat beatae placeat quos, labore libero, mollitia nostrum ad numquam
+                necessitatibus ea. Dolore natus laboriosam nihil adipisci magnam provident facere fugiat consequatur
+                voluptates, eum, cumque nesciunt!
+                Perferendis adipisci eligendi nulla animi repudiandae porro, at rerum numquam excepturi repellat minima
+                quis quo qui fugiat, fuga officia maxime est, cupiditate eos sunt. Quos autem omnis ex magnam ut?
+                Ducimus facilis veniam voluptatibus officiis, dicta vitae quam assumenda quos, dolorem quaerat tempora,
+                quod odit. Tempore, neque incidunt enim ab eligendi natus quisquam nemo in expedita possimus consequatur
+                reprehenderit porro?
+                Libero quos voluptatem molestiae rerum ipsa omnis ducimus illo fugit possimus. Minus id quaerat mollitia
+                exercitationem. Quae soluta nisi, sint voluptate earum iure dolore, officia tenetur, optio nesciunt
+                molestias ratione?
+                Molestias quaerat laborum quae, dignissimos soluta laboriosam. Nulla recusandae ipsa voluptatibus ab ex
+                laboriosam nam inventore deleniti, veniam quis suscipit assumenda ipsum tenetur repellat officiis
+                incidunt in. Quisquam, vero facilis?
+                Ab molestias doloribus maxime neque modi expedita iure repellendus vero illum dolores aliquam atque
+                minima, quaerat deserunt unde beatae consectetur veniam, saepe maiores debitis cumque incidunt ipsam.
+                Vero, nihil perferendis?
+                Dolorum, voluptate, recusandae debitis ab magnam suscipit odit alias fugiat laboriosam nesciunt, magni
+                minus repudiandae. Ipsum cum ut saepe voluptates et nulla natus, libero quis quia iste, temporibus eaque
+                dicta!
+                Ex maiores cum eveniet a at ullam, magni repellat ab quas assumenda earum animi nobis exercitationem
+                deleniti praesentium quos temporibus. Vero facilis fuga, provident incidunt tempore sit nemo fugit
+                expedita?
+                Quis asperiores incidunt commodi vitae perferendis. Perferendis possimus veritatis facilis blanditiis
+                hic iste placeat mollitia rerum recusandae tenetur accusantium ab accusamus quibusdam magnam alias qui
+                corrupti quod, aliquam, ea numquam!
+                Eius sint neque maiores necessitatibus distinctio unde impedit nihil! Maxime labore autem in pariatur,
+                illum a veritatis praesentium beatae! Ratione sequi alias voluptate totam mollitia debitis vitae tenetur
+                quasi deleniti?
+                Iusto facilis distinctio, sapiente totam perferendis fugiat fuga aliquam rerum harum similique, corrupti
+                dignissimos vitae quaerat iure suscipit cum nulla rem, libero facere autem unde. Distinctio repudiandae
+                ut ipsam itaque.
+                Voluptatibus vel rerum cupiditate recusandae ex veniam earum hic iusto incidunt, facilis ipsam
+                perspiciatis saepe molestiae officia. Nemo ea voluptatem, error aut veritatis, voluptatum odio, qui in
+                deleniti harum laborum.
+                Consectetur fuga, porro hic vero deleniti voluptates labore omnis consequuntur corrupti at molestiae
+                reiciendis ex, facilis dolorem dolore rerum officiis temporibus, eius aperiam eos. Tempora enim rerum
+                doloremque itaque quam?
+                Assumenda iure suscipit commodi rerum molestias saepe maiores praesentium non nihil sequi dolore esse
+                et, sunt nemo culpa perspiciatis. Odio praesentium officia sint ut tempore, quam nisi quas nesciunt
+                rerum.
+                Totam harum officiis cumque necessitatibus cum, nemo in tenetur vel a provident voluptatem id at illum
+                delectus iste. Consequuntur dolores beatae itaque facilis corporis voluptate! Aut eveniet modi earum
+                non!
+                Voluptate eligendi voluptates cumque quos, tenetur dolorem ipsum repudiandae et id rem? Quia, eaque
+                laudantium. Sint, ipsum. Aperiam, architecto a saepe vitae et quibusdam atque qui pariatur eius minus
+                dolorum.
+                Dolorum quos voluptate labore ab accusamus nam, ipsa cum ea? Facere, voluptas? Voluptas, atque laborum
+                reprehenderit eaque dolores blanditiis soluta omnis earum iste tempora, alias fuga? Vitae hic quas iure.
+            </p>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+
+
+<script>
+
+
+
+    $(document).ready(function () {
+
+
+        $(window).scroll(function () {
+            $('nav').toggleClass('changebgc', $(this).scrollTop() > 100);
+            $('#logotext,#nvl').toggleClass('changetextc', $(this).scrollTop() > 100);
+            $('.fa-bars').toggleClass('changetextc', $(this).scrollTop() > 100);
+        })
+
+        $('.fa-bars').click(function () {
+            $('.nav__navlinks').addClass('slidedown');
+        })
+
+        $('.fa-times').click(function () {
+            $('.nav__navlinks').removeClass('slidedown');
+        })
+
+
+        $('.ring').click(function () {
+
+            $('.ring').toggleClass('click')
+
+        })
+
+    })
+
+</script>
+
+
+
+</html>

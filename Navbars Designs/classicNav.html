@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Nav-Bar</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.structure.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.theme.css">
+</head>
+
+<style>
+    body {
+        font-family: "Quicksand", sans-serif;
+        font-weight: bolder;
+        margin: 0;
+        background-color: #eff5ff;
+        padding: 0;
+    }
+
+    * {
+        outline: none;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: #1976d2;
+        overflow: hidden;
+    }
+
+    .navlogo {
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+    }
+
+    .navlogo img {
+        animation: fbimg 1s ease-in-out 3s forwards;
+        opacity: 0;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .navlogo h3 {
+        padding-left: 10px;
+        margin-top: 5px;
+        color: white;
+        font-weight: bold;
+        animation: fbimg 1s ease-in-out 3.5s forwards;
+        opacity: 0;
+        transition: color .3;
+        font-size: 20px;
+    }
+
+    .navlogo h3:hover {
+        color: #0099ff;
+    }
+
+
+    .navlinks {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navlinks ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .5s;
+    }
+
+    .navlinks li {
+        padding: 10px;
+        animation: fbimg 1s ease-in-out 4s forwards;
+        opacity: 0;
+        list-style: none;
+    }
+
+    .navlinks a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        transition: all .3s;
+        letter-spacing: 2px;
+    }
+
+    .navlinks .hambar {
+        display: none;
+        cursor: pointer;
+    }
+
+    ul li a:hover {
+        color: #0099ff;
+    }
+
+    .Heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 85vh;
+    }
+
+    .Heading h1 {
+        font-size: 170px;
+        animation: fbimg 2s ease-in-out 2s forwards;
+        opacity: 0;
+        transition: all .3s;
+    }
+
+    .Heading img:hover~h1 {
+        color: #1976d2;
+    }
+
+    .Heading img {
+        animation: fbimg 1s ease-in-out 1s forwards;
+        z-index: 1;
+        opacity: 0;
+        width: 250px;
+    }
+
+
+    .caption {
+        display: flex;
+        justify-content: center;
+        margin-top: -200px;
+        margin-left: 170px;
+        opacity: 0;
+        animation: fbimg 1s ease-in-out 3.5s forwards;
+    }
+
+    .caption h1 {
+        letter-spacing: 2px;
+        font-weight: 800;
+    }
+
+    @media (max-width:790px) {
+
+        body {
+            overflow: hidden;
+        }
+
+        .navlinks .hambar {
+            display: block;
+            transform: scale(1.8);
+            padding-left: 10px;
+            padding-right: 20px;
+            color: white;
+        }
+
+        .navbar {
+            overflow: hidden;
+        }
+
+        ul {
+            position: absolute;
+            top: 5.4%;
+            left: -150%;
+            flex-direction: column;
+            background-color: #1976d2;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        ul li {
+            margin: 10px 0px;
+            margin-left: -70px;
+        }
+
+        ul.show {
+            left: 0%;
+        }
+
+        .navlogo {
+            margin-left: 0;
+        }
+
+        .Heading {
+            width: 100%;
+            height: 80vh;
+        }
+
+        .Heading h1 {
+            font-size: 60px;
+            z-index: -2;
+        }
+
+        .Heading img {
+            width: 80px;
+            z-index: -1;
+        }
+
+        .caption h1 {
+            font-size: 18px;
+            margin-top: -20px;
+        }
+    }
+
+    @keyframes fbimg {
+        0% {
+            opacity: 0;
+            transform: translateX(-200px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="navlogo">
+            <img src="/e-N Project/facebook.png" width="40px">
+
+            <h3>Facebook</h3>
+        </div>
+
+
+
+        <div class="navlinks">
+
+            <ul class="li">
+
+                <li><a href="#" class="links">HOME</a></li>
+                <li><a href="#" class="links">ABOUT US</a></li>
+                <li><a href="#" class="links">CONTACT</a></li>
+                <li><a href="#" class="links">REGISTER</a></li>
+                <li><a href="#" class="links">LOGIN</a></li>
+
+            </ul>
+
+
+            <div class="hambar">
+
+                <i class="fas fa-bars" id="hambar"></i>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <div class="Heading">
+        <img src="/e-N Project/facebook.png">
+        <h1>acebook</h1>
+    </div>
+
+    <div class="caption">
+        <h1>Let's Create Some AWESOME !</h1>
+    </div>
+</body>
+
+<script src="/jquery.js"></script>
+<script src="/jquery-ui-1.12.1/jquery-ui.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#hambar").click(function () {
+
+            $("ul").toggleClass("show")
+
+        })
+
+    })
+
+
+</script>
