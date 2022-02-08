@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File upload Button Design</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #0099ff;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    * {
+        outline: none;
+        transition: all .5s;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        background-color: #fff;
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: -4px 4px 20px rgba(0, 0, 0, .5);
+    }
+
+
+
+    .content input[type="file"] {
+        display: none;
+    }
+
+    .content #labf {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0099ff;
+        color: #fff;
+        border-radius: 50px;
+        width: 100%;
+        cursor: pointer;
+        font-weight: bolder;
+        font-size: 18px;
+        overflow: hidden;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    }
+
+    .content p {
+        margin-left: 70px;
+    }
+
+    .content i {
+        position: absolute;
+        left: 5%;
+        transform: scale(2);
+        background-color: #fff;
+        color: #0099ff;
+        text-align: center;
+        padding: 8px;
+        width: 30px;
+    }
+
+    /* checkbox button  */
+
+    .content input[type="checkbox"] {
+        appearance: none;
+    }
+
+    .content #checkbx {
+        width: 150px;
+        height: 60px;
+        background-color: #adadad;
+        margin: 30px 0px;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, .5);
+        border-radius: 50px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    #checkbx::before {
+        position: absolute;
+        content: '';
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, .8);
+        border-radius: 50%;
+        margin-top: -5px;
+        padding: 5px;
+        transition: all .5s;
+    }
+
+    #checkbx:checked {
+        background-color: #0099ff;
+    }
+
+    #checkbx:checked::before {
+        margin-left: 90px;
+    }
+
+
+    /* js classes */
+</style>
+
+<body>
+
+    <div class="container">
+
+        <div class="content">
+
+            <h1 id="h1">Custom Buttons</h1>
+
+
+            <label for="file" id="labf">
+
+                <i class="fa fa-file"></i>
+
+                <p>Upload Your Profile</p>
+
+            </label>
+
+            <input type="file" id="file">
+
+
+            <input type="checkbox" id="checkbx">
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+
+</html>

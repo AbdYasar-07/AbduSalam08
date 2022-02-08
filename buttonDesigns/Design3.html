@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Design 3</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-width: 280px;
+        font-family: 'Poppins';
+    }
+
+    .container {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* style 3 */
+
+    .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul {
+        position: absolute;
+        display: flex;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    ul li a {
+        text-decoration: none;
+        position: relative;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+        align-items: center;
+        letter-spacing: 4px;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+
+    .links a::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        border-radius: 5px;
+        transition: .3s;
+        background-color: #0099ff;
+        border-top-right-radius: 80%;
+        border-top-left-radius: 80%;
+        z-index: -1;
+    }
+
+    a:hover:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0099ff;
+        transition: .3s;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        z-index: -1;
+    }
+</style>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- style 3 -->
+
+        <div class="links">
+
+            <ul>
+                <li><a href="" style="color: black;"> HOME </a></li>
+                <li><a href="" style="color: black;"> ABOUT </a></li>
+                <li><a href="" style="color: black;"> CONTENT </a></li>
+                <li><a href="" style="color: black;"> LOGIN </a></li>
+                <li><a href="" style="color: black;"> REGISTER </a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+</body>

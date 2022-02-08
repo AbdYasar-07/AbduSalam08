@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Designs</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-width: 280px;
+            background-color: #e5f5ff;
+            font-family: 'Poppins';
+        }
+
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* style 4 */
+
+        .icons {
+            padding: 40px 80px;
+            padding-bottom: 0;
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            flex-wrap: wrap;
+            border-radius: 10px;
+            background-color: #0a2b3c;
+            transition: .3s;
+            box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3),
+                inset -1px -1px 5px rgba(255, 255, 255, 0.1);
+            border: none;
+        }
+
+        .icons .nav-link {
+            font-weight: bolder;
+            transform: scale(1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3),
+                -1px -1px 1px rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            color: white;
+            transition: .3s;
+        }
+
+        .icons .nav-link:hover {
+            transition: .3s;
+            transform: scale(0.95);
+            color: rgb(39, 39, 235);
+            box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3),
+                inset -1px -1px 1px rgba(255, 255, 255, 0.2);
+            border: none;
+        }
+
+        .nav-link:active {
+            background-color: #fff;
+            color: rgb(39, 39, 235);
+        }
+
+        .title {
+            font-weight: bolder;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+        }
+
+        .title h3::selection {
+            background-color: #0a2b3c;
+            color: rgb(39, 39, 235);
+        }
+
+        .menu {
+            width: 100%;
+            border-top: 1px solid rgba(253, 245, 230, 0.1);
+            border-bottom: 1px solid rgba(253, 245, 230, 0.1);
+            height: 340px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .mi1 {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .mi2 {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .scroll {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scrollbar {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+        }
+
+        .scrollbar a {
+            transform: scaleX(3);
+            text-decoration: none;
+            color: oldlace;
+        }
+
+        .scrollbar a:active {
+            color: rgb(39, 39, 235);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+
+
+
+
+
+        <!-- style 4 -->
+        <div class="icons">
+            <div class="title">
+                <h3 class="text-white ">MENU-BAR</h3>
+            </div>
+
+            <div class="menu">
+
+                <div class="mi1" id="mi1">
+                    <a href="" class="nav-link">
+                        <h3><i class="fas fa-wifi"></i></h3>
+                    </a>
+                    <a href="" class="nav-link">
+                        <h4><i class="fas fa-broadcast-tower"></i></h4>
+                    </a>
+                    <a href="" class="nav-link">
+                        <h3><i class="fas fa-plane"></i></h3>
+                    </a>
+                    <a href="" class="nav-link">
+                        <h4><i class="fas fa-video-slash"></i></h4>
+                    </a>
+                    <a href="" class="nav-link">
+                        <h3><i class="fab fa-bluetooth-b"></i></h3>
+                    </a>
+                    <a href="" class="nav-link">
+                        <h2><i class="fas fa-volume-off"></i></h2>
+                    </a>
+                </div>
+
+                <div class="mi2" id="mi2">
+                    <a href="" class="nav-link">
+                        <h3><i class="fas fa-wifi"></i></h3>
+                    </a>
+                    <a href="" class="nav-link">
+                        <h4><i class="fas fa-broadcast-tower"></i></h4>
+                    </a>
+                    <a href="" class="nav-link">
+                        <h3><i class="fas fa-plane"></i></h3>
+                    </a>
+                    <a href="" class="nav-link">
+                        <h4><i class="fas fa-video-slash"></i></h4>
+                    </a>
+                    <a href="" class="nav-link">
+                        <h3><i class="fab fa-bluetooth-b"></i></h3>
+                    </a>
+                    <a href="" class="nav-link">
+                        <h2><i class="fas fa-volume-off"></i></h2>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="scrollbar">
+                <a href="#mi1">
+                    <h1>-</h1>
+                </a>
+                <a href="#mi2">
+                    <h1>-</h1>
+                </a>
+            </div>
+
+        </div>
+
+</body>
+
+</html>
