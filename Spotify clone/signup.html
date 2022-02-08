@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Signup - Spotify - Clone
+    </title>
+    <link rel="icon" href="https://www.scdn.co/i/_global/favicon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.structure.css">
+    <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.theme.css">
+</head>
+
+
+<style>
+    * {
+        list-style-type: none;
+        box-sizing: border-box;
+        outline: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    input[type='text']:focus,
+    input[type='password']:focus,
+    input[type='email']:focus,
+    select:focus {
+        border: 3px solid black;
+    }
+
+
+    a {
+        color: #1ed760;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+        appearance: none;
+        width: 5px;
+        border-radius: 50px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #000;
+        width: 5px;
+    }
+</style>
+
+
+
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 40%;
+        min-height: 100vh;
+        margin-bottom: 300px;
+    }
+
+    .wrapper .method1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        min-height: 250px;
+    }
+
+    .wrapper .method1 h1 {
+        font-size: 30px;
+        letter-spacing: -1px;
+        text-align: center;
+    }
+
+    .wrapper .method1 .herobtn1 {
+        width: 250px;
+        padding: 15px;
+        background-color: #0044ff;
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        color: #fff;
+        font-weight: bolder;
+        font-family: 'poppins';
+        letter-spacing: 1px;
+        transition: all .2s;
+    }
+
+    .wrapper .method1 .herobtn1:hover {
+        transform: scale(1.05);
+    }
+
+
+
+    .wrapper .or {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 30px;
+    }
+
+    .wrapper .or p {
+        font-size: 20px;
+        position: relative;
+        color: #adadad;
+    }
+
+    .wrapper .or p::before {
+        content: '';
+        position: absolute;
+        width: 250px;
+        height: 1px;
+        right: 100%;
+        top: 55%;
+        margin-right: 10px;
+        background-color: #adadad75;
+    }
+
+    .wrapper .or p::after {
+        content: '';
+        position: absolute;
+        width: 250px;
+        height: 1px;
+        left: 100%;
+        top: 55%;
+        margin-left: 10px;
+        background-color: #adadad75;
+    }
+
+    /* for syling */
+
+
+    .wrapper .method2,
+    form {
+        margin-top: 20px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        min-width: 100%;
+        min-height: 500px;
+    }
+
+    .wrapper .method2 form {
+        width: 100%;
+    }
+
+    form .email {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    form .email label {
+        font-size: 16px;
+        font-weight: bolder;
+        padding-bottom: 10px;
+    }
+
+    form .email input {
+        width: 100%;
+        height: 55px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+        border-radius: 5px;
+        border: 1px solid #adadad;
+    }
+
+
+    form .pnumber {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    form .pnumber label {
+        font-size: 16px;
+        font-weight: bolder;
+        padding-bottom: 10px;
+    }
+
+    form .pnumber input {
+        width: 100%;
+        height: 55px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+        border-radius: 5px;
+        border: 1px solid #adadad;
+    }
+
+    form .cemail {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 25px;
+
+    }
+
+    form .cemail label {
+        font-size: 16px;
+        font-weight: bolder;
+        padding-bottom: 10px;
+    }
+
+    form .cemail input {
+        width: 100%;
+        height: 55px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+        border-radius: 5px;
+        border: 1px solid #adadad;
+    }
+
+    form .pass {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 25px;
+
+    }
+
+    form .pass label {
+        font-size: 16px;
+        font-weight: bolder;
+        padding-bottom: 10px;
+    }
+
+    form .pass input {
+        width: 100%;
+        height: 55px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+        border-radius: 5px;
+        border: 1px solid #adadad;
+    }
+
+
+    form .uname {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 25px;
+
+    }
+
+    form .uname label {
+        font-size: 16px;
+        font-weight: bolder;
+        padding-bottom: 10px;
+    }
+
+    form .uname input {
+        width: 100%;
+        height: 55px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+        border-radius: 5px;
+        border: 1px solid #adadad;
+    }
+
+
+
+    form .dob {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 25px;
+
+    }
+
+    form .dob label {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+
+
+    form .dob input,
+    select,
+    .month,
+    .year,
+    .date {
+        width: 100%;
+        height: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+    }
+
+    .month select,
+    .year input,
+    .date input {
+        border: 1px solid #adadad;
+        border-radius: 5px;
+    }
+
+    .month select {
+        color: #777676;
+        appearance: none;
+    }
+
+    form .ymd {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 25px;
+
+    }
+
+
+    form .ymd select {
+        width: 100%;
+        height: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+    }
+
+    form .dob #dobq {
+        font-weight: bolder;
+        margin-bottom: 10px;
+    }
+
+
+    form .gender {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    form .gender label {
+        font-size: 16px;
+        font-weight: bolder;
+        padding-bottom: 10px;
+    }
+
+
+    form .gender .radio {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    form .gender .radio input[type='radio'] {
+        appearance: none;
+    }
+
+    form .gender .radio label {
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+        margin-left: 20px;
+        font-weight: 100;
+    }
+
+    form .gender .radio label::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 25%;
+        right: 100%;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 5px solid #adadad80;
+    }
+
+    form .gender .radio #male:checked~label[for='male']::before {
+        background-color: #1ed760;
+        border-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.400);
+    }
+
+    form .gender .radio #female:checked~label[for='female']::before {
+        background-color: #1ed760;
+        border-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.400);
+
+    }
+
+    form .gender .radio #other:checked~label[for='other']::before {
+        background-color: #1ed760;
+        border-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.400);
+    }
+
+
+    form .cbx1 {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 16px;
+
+    }
+
+    form .cbx2 {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 16px;
+
+    }
+
+    form .tac1 {
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 13px;
+    }
+
+
+    form .tac2 {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    form .submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    form .submit .herobtn2 {
+        width: 150px;
+        border: 0;
+        outline: 0;
+        background-color: #1ed760;
+        color: #222326;
+        border-radius: 50px;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bolder;
+        text-align: center;
+        transition: all .2s ease-in-out;
+    }
+
+    form .submit .herobtn2:hover {
+        transform: scale(1.1);
+    }
+
+    form .login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+        color: #222326;
+    }
+</style>
+
+<style>
+    @media (max-width:800px) {
+
+        .wrapper .or p::before {
+            width: 150px;
+        }
+
+        .wrapper .or p::after {
+            width: 150px;
+        }
+
+        .wrapper {
+            width: 90%;
+        }
+
+        .gender .radio {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .cbx1 label {
+            position: relative;
+            font-size: 14px;
+        }
+
+        .cbx1 label::before {
+            transform: translateX(0px);
+        }
+
+        .cbx2 label {
+            position: relative;
+            font-size: 14px;
+
+        }
+
+
+    }
+</style>
+
+
+<style>
+    .alertmail {
+        color: red;
+        font-weight: bolder;
+        padding: 10px;
+        display: none;
+    }
+
+    .alertcmail {
+        color: red;
+        font-weight: bolder;
+        padding: 10px;
+        display: none;
+    }
+
+    .alertpass {
+        color: red;
+        font-weight: bolder;
+        padding: 10px;
+        display: none;
+    }
+
+    .alertuname {
+        color: red;
+        font-weight: bolder;
+        padding: 10px;
+        display: none;
+    }
+
+    .alertgender {
+        color: #1ed760;
+        font-weight: bolder;
+        padding: 10px;
+        display: none;
+        margin-top: 10px;
+    }
+
+    .alertyear {
+        color: red;
+        font-weight: bolder;
+        padding: 10px;
+        display: none;
+    }
+
+
+    .alertmonth {
+        color: red;
+        font-weight: bolder;
+        padding: 10px;
+        display: none;
+    }
+
+    .alertdate {
+        color: red;
+        font-weight: bolder;
+        padding: 10px;
+        display: none;
+    }
+
+
+    #cbx1,
+    #cbx2 {
+        appearance: none;
+    }
+
+    .cbx1 label {
+        position: relative;
+        margin-left: 20px;
+    }
+
+    .cbx1 label::before {
+        content: '';
+        position: absolute;
+        top: -8%;
+        left: -0%;
+        transform: translateX(-50px);
+        width: 20px;
+        height: 20px;
+        border: 1px solid #1ed760;
+        border-radius: 3px;
+    }
+
+    .cbx1 #cbx1:checked~label::before {
+        content: '✔';
+        background-color: #1ed760;
+        border: 1px solid #1ed760;
+    }
+
+    .cbx2 label {
+        position: relative;
+        margin-left: 20px;
+
+    }
+
+    .cbx2 label::before {
+        content: '';
+        position: absolute;
+        top: -8%;
+        left: -0%;
+        transform: translateX(-50px);
+        width: 20px;
+        height: 20px;
+        border: 1px solid #1ed760;
+        border-radius: 3px;
+    }
+
+    .cbx2 #cbx2:checked~label::before {
+        content: '✔';
+        background-color: #1ed760;
+        border: 1px solid #1ed760;
+    }
+
+
+    .popup {
+        display: block;
+    }
+</style>
+
+<body>
+
+
+    <div class="wrapper">
+
+
+        <div class="form">
+
+            <div class="method1">
+
+                <svg role="img" viewBox="0 0 78 24" class="Svg-sc-1mvnrx6-0 pPRop" width='150px'>
+                    <path
+                        d="M18.871 10.64C15.056 8.35 8.764 8.139 5.122 9.256a1.105 1.105 0 0 1-1.38-.745 1.121 1.121 0 0 1 .737-1.396c4.18-1.283 11.13-1.035 15.522 1.6.526.316.699 1.002.387 1.533a1.1 1.1 0 0 1-1.517.392zm-.125 3.392a.917.917 0 0 1-1.269.307c-3.18-1.977-8.03-2.549-11.793-1.394a.922.922 0 0 1-1.151-.622.936.936 0 0 1 .615-1.163c4.298-1.319 9.642-.68 13.295 1.59.433.27.57.844.303 1.282zm-1.448 3.257a.732.732 0 0 1-1.014.248c-2.78-1.717-6.277-2.105-10.397-1.153a.737.737 0 0 1-.883-.561.745.745 0 0 1 .555-.893c4.508-1.042 8.375-.593 11.495 1.334a.75.75 0 0 1 .244 1.025zM11.871.034C5.334.034.036 5.39.036 11.997c0 6.608 5.298 11.963 11.835 11.963 6.536 0 11.835-5.355 11.835-11.963C23.706 5.39 18.407.034 11.87.034zm20.363 11.044c-2.043-.493-2.407-.838-2.407-1.565 0-.686.64-1.148 1.59-1.148.921 0 1.835.351 2.793 1.073.029.022.065.03.101.025a.132.132 0 0 0 .088-.055l.998-1.422a.137.137 0 0 0-.025-.184c-1.14-.925-2.424-1.374-3.925-1.374-2.206 0-3.747 1.338-3.747 3.253 0 2.054 1.33 2.78 3.627 3.342 1.955.455 2.285.837 2.285 1.519 0 .755-.667 1.225-1.741 1.225-1.193 0-2.166-.406-3.254-1.359a.132.132 0 0 0-.19.015l-1.119 1.346a.135.135 0 0 0 .013.188c1.267 1.143 2.824 1.746 4.504 1.746 2.378 0 3.914-1.313 3.914-3.345 0-1.718-1.015-2.668-3.505-3.28m10.61 2.302c0 1.45-.884 2.463-2.15 2.463-1.25 0-2.194-1.058-2.194-2.463 0-1.404.943-2.462 2.195-2.462 1.245 0 2.149 1.035 2.149 2.462zm-1.726-4.34c-1.03 0-1.876.411-2.573 1.252v-.946a.135.135 0 0 0-.133-.136h-1.83a.135.135 0 0 0-.134.136V19.86c0 .075.06.136.134.136h1.83a.135.135 0 0 0 .133-.136v-3.319c.698.791 1.543 1.177 2.573 1.177 1.915 0 3.853-1.49 3.853-4.338 0-2.849-1.938-4.34-3.853-4.34zm8.822 6.818c-1.312 0-2.3-1.065-2.3-2.478 0-1.418.954-2.448 2.27-2.448 1.32 0 2.315 1.066 2.315 2.48 0 1.417-.96 2.446-2.285 2.446zm0-6.817c-2.466 0-4.398 1.92-4.398 4.37 0 2.424 1.919 4.324 4.368 4.324 2.474 0 4.412-1.913 4.412-4.355 0-2.433-1.924-4.34-4.382-4.34zm9.648.169h-2.013V7.13a.134.134 0 0 0-.134-.136h-1.83a.135.135 0 0 0-.133.135V9.21h-.88a.134.134 0 0 0-.133.136v1.59c0 .074.06.135.133.135h.88v4.113c0 1.662.818 2.505 2.432 2.505.656 0 1.2-.137 1.714-.432a.135.135 0 0 0 .068-.117v-1.514a.136.136 0 0 0-.064-.115.133.133 0 0 0-.13-.006c-.353.18-.693.262-1.074.262-.587 0-.85-.27-.85-.873V11.07h2.014a.135.135 0 0 0 .134-.136v-1.59a.134.134 0 0 0-.134-.135m7.015.009v-.255c0-.752.285-1.088.925-1.088.381 0 .688.077 1.031.193a.133.133 0 0 0 .12-.02.135.135 0 0 0 .056-.11V6.38a.135.135 0 0 0-.095-.13 4.977 4.977 0 0 0-1.52-.22c-1.69 0-2.584.962-2.584 2.78v.392h-.879a.135.135 0 0 0-.134.135v1.598c0 .075.06.136.134.136h.88v6.344c0 .075.059.135.133.135h1.83c.073 0 .133-.06.133-.135V11.07h1.709l2.617 6.342c-.297.667-.59.8-.988.8-.323 0-.662-.098-1.01-.29a.136.136 0 0 0-.106-.01.136.136 0 0 0-.079.073l-.62 1.375a.135.135 0 0 0 .057.175 3.82 3.82 0 0 0 1.955.506c1.35 0 2.097-.636 2.756-2.348l3.174-8.291a.137.137 0 0 0-.014-.126.133.133 0 0 0-.11-.059h-1.905a.135.135 0 0 0-.127.091l-1.951 5.634-2.137-5.638a.133.133 0 0 0-.125-.087h-3.126m-4.067-.007h-1.83a.135.135 0 0 0-.133.136v8.069c0 .075.06.135.134.135h1.83c.073 0 .133-.06.133-.135v-8.07a.135.135 0 0 0-.134-.135m-.906-3.674a1.32 1.32 0 0 0-1.312 1.326 1.32 1.32 0 0 0 1.313 1.327 1.32 1.32 0 0 0 1.312-1.327c0-.733-.588-1.326-1.312-1.326m16.104 4.477H77.4v.432h.335c.167 0 .267-.083.267-.216 0-.141-.1-.216-.267-.216zm.217.616l.365.516h-.308l-.327-.473H77.4v.473h-.257V9.778h.602c.314 0 .521.163.521.436a.407.407 0 0 1-.314.415zm-.285-1.305c-.66 0-1.159.53-1.159 1.179 0 .648.496 1.171 1.152 1.171.66 0 1.16-.53 1.16-1.179 0-.648-.497-1.171-1.153-1.171zm-.007 2.48a1.29 1.29 0 0 1-1.287-1.301c0-.714.57-1.309 1.294-1.309a1.29 1.29 0 0 1 1.287 1.301c0 .714-.57 1.31-1.294 1.31z">
+                    </path>
+                </svg>
+
+                <h1>Sign up for free to start listening.</h1>
+
+                <button class="herobtn1">Sign up with Facebook</button>
+
+            </div>
+
+            <div class="or">
+                <p>or</p>
+            </div>
+
+
+            <div class="method2">
+
+
+                <form action="Spotify landing page.html">
+
+                    <div class="email">
+
+                        <label for="email">What's your email?</label>
+                        <input type="email" name="email" id="email" placeholder="Enter you email.">
+                        <p class="alertmail"><i class="fas fa-times" style="margin-right: 5px;"></i> <span> You need to
+                                enter
+                                your mail</span></p>
+
+                    </div>
+
+                    <div class="pnumber">
+                        <p><a href="Signup with pnum.html">Use phone number instead.</a></p>
+                    </div>
+
+                    <div class="cemail">
+
+                        <label for="cemail">Confirm your email</label>
+                        <input type="email" name="cemail" id="cemail" placeholder="Enter you email again.">
+                        <p class="alertcmail"><i class="fas fa-times" style="margin-right: 5px;"></i><span> You need to
+                                confirm your mail</span></p>
+
+                    </div>
+
+                    <div class="pass">
+
+                        <label for="pass">Create your password</label>
+                        <input type="password" name="pass" id="pass" placeholder="Enter you password.">
+                        <p class="alertpass"><i class="fas fa-times" style="margin-right: 5px;"></i> <span>You need to
+                                enter
+                                your password</span></p>
+
+
+                    </div>
+
+                    <div class="uname">
+
+                        <label for="uname">What should we call you?</label>
+                        <input type="text" name="uname" id="uname" placeholder="Enter you profile name.">
+                        <p class="alertuname"><i class="fas fa-times" style="margin-right: 5px;"></i><span> You need to
+                                enter
+                                your profile</span></p>
+
+
+                    </div>
+
+                    <div class="dob">
+
+                        <label id="dobq">What's your date of birth?</label>
+
+
+                        <div class="ymd">
+
+                            <div class="year">
+                                <label for="year">Year</label>
+                                <input type="number" name="year" id="year" min="1990" max="2020" minlength=" 4"
+                                    maxlength="4" placeholder="YYYY" title="Select a year from 1990 to 2020">
+                            </div>
+
+
+                            <div class="month">
+                                <label for="month">Month</label>
+                                <select name="month" id="month">
+                                    <option value="0" hidden>Month</option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;"
+                                        disabled>
+                                    </option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        January
+                                    </option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        February
+                                    </option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        March</option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        April</option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        May</option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        June</option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        July</option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        Augest
+                                    </option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        September
+                                    </option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        October
+                                    </option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        November
+                                    </option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;">
+                                        December
+                                    </option>
+                                    <option
+                                        style="background-color: #eff5ff; font-weight: bolder; margin: 10px; color: #222326;"
+                                        disabled>
+                                    </option>
+                                </select>
+                            </div>
+
+
+                            <div class="date">
+                                <label for="date">Date</label>
+                                <input type="text" minlength=" 2" maxlength="2" name="date" id="date" placeholder="DD">
+                            </div>
+                        </div>
+
+
+                        <p class="alertyear"><i class="fas fa-times" style="margin-right: 5px;"></i> <span>Enter a valid
+                                Year.</span></p>
+                        <p class="alertmonth"><i class="fas fa-times" style="margin-right: 5px;"></i> <span>Select a
+                                valid
+                                Month.</span></p>
+                        <p class="alertdate"><i class="fas fa-times" style="margin-right: 5px;"></i> <span>Enter a valid
+                                Date.</span></p>
+
+                    </div>
+
+
+                    <div class="gender">
+
+                        <label>What's your gender?</label>
+
+                        <div class="radio">
+
+                            <input type="radio" name="gender" id="male">
+                            <label for="male">Male</label>
+
+                            <input type="radio" name="gender" id="female">
+                            <label for="female">Female</label>
+
+                            <input type="radio" name="gender" id="other">
+                            <label for="other">Non-binary</label>
+
+                        </div>
+
+                        <p class="alertgender"><i class="fas fa-smile" style="margin-right: 5px;"></i> <span>
+                                Gender Selected !
+                            </span></p>
+                    </div>
+
+                    <div class="cbx1">
+
+                        <input type="checkbox" name="cbx1" id="cbx1">
+                        <label for="cbx1">I would prefer not to receive marketing messages from Spotify</label>
+
+                    </div>
+
+                    <div class="cbx2">
+
+                        <input type="checkbox" name="cbx2" id="cbx2">
+                        <label for="cbx2">Share my registration data with Spotify's content providers for <br> marketing
+                            purposes.</label>
+
+                    </div>
+
+                    <div class="tac1">
+
+                        <p>By clicking on sign-up, you agree to Spotify's <br><a href="#"> Terms and Conditions of
+                                Use.</a>
+                        </p>
+
+                    </div>
+
+                    <div class="tac2">
+
+                        <p>To learn more about how Spotify collects, uses, <br> shares and protects your personal data,
+                            please see <br><a href="#"> Spotify's Privacy
+                                Policy.</a></p>
+
+                    </div>
+
+                    <div class="submit">
+
+                        <button id="submit" class="herobtn2">Sign-up</button>
+
+                    </div>
+
+                    <div class="login">
+
+                        <h3>Have an account? <a href="login.html"> Log in. </a></h3>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+</body>
+
+<script src="/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+
+
+        $('#submit').click(function () {
+
+            var usernameemail = $('#uname').val();
+            var pwd = $('#pass').val();
+            var email = $('#email').val();
+            var cemail = $('#cemail').val();
+            var varudam = $('#year').val();
+            var varudam_length = $('#year').val().length;
+            var maatham = $('#month').val();
+            var naal = $('#date').val();
+            var naal_length = $('#date').val().length;
+            var gender = $("input[name='gender']:checked").val();
+
+
+
+            if (email.length == "") {
+                $('.alertemail').addClass('popup');
+                $('#email').css({
+                    'border': '3px solid red'
+                });
+                $('#email').focus()
+                return false;
+            }
+
+
+            if (cemail.length == "") {
+                $('.alertcemail').addClass('popup');
+                $('#cemail').css({
+                    'border': '3px solid red'
+                });
+                $('#cemail').focus()
+                return false;
+            }
+
+
+            if (pwd.length == "") {
+                $('.alertpass').addClass('popup');
+                $('#pass').css({
+                    'border': '3px solid red'
+                });
+                $('#pass').focus()
+                return false;
+            }
+
+
+            if (usernameemail.length == "") {
+                $('.alertuname').addClass('popup');
+                $('#uname').css({
+                    'border': '3px solid red'
+                });
+                $('#uname').focus()
+                return false;
+            }
+
+
+            if (varudam.length == "") {
+                $('.alertyear').addClass('popup');
+                $('#year').css({
+                    'border': '3px solid red'
+                });
+                $('#year').focus()
+                return false;
+            }
+
+
+            if (maatham === "0") {
+                $('.alertmonth').addClass('popup');
+                $('#month').css({
+                    'border': '3px solid red'
+                });
+                $('#month').focus()
+                return false;
+            }
+
+
+            if (naal.length == "") {
+                $('.alertdate').addClass('popup');
+                $('#date').css({
+                    'border': '3px solid red'
+                });
+                $('#date').focus()
+                return false;
+            }
+
+
+            if (gender) {
+                return true;
+            }
+
+            else {
+                $('.alertgender').addClass('popup');
+                $('.alertgender').css({
+                    'color': 'red'
+                });
+                $('.alertgender>i').removeClass('fa-smile');
+                $('.alertgender>i').addClass('fa-times');
+                $('.alertgender>span').text('Select youe gender');
+                return false;
+            }
+
+
+
+        });
+
+
+        $('#email').focusout(function () {
+            check_email();
+        })
+
+        $('#cemail').focusout(function () {
+            check_cemail();
+        })
+
+        $('#pass').focusout(function () {
+            check_pass();
+
+        })
+
+        $('#uname').focusout(function () {
+            check_uname();
+        })
+
+        $('#year').focusout(function () {
+            check_year();
+        })
+
+        $('#month').focusout(function () {
+            check_month();
+        })
+
+        $('#date').focusout(function () {
+            check_date();
+        })
+
+        $("input[name='gender']").click(function () {
+            check_gender();
+        })
+
+
+
+        function check_email() {
+
+            var email = $('#email').val();
+            if (email.trim() && email !== "") {
+                $('.alertmail').removeClass('popup');
+                $('#email').css({
+                    'border': '3px solid #1ed760'
+                })
+            }
+
+
+            else {
+                $('.alertmail').addClass('popup');
+                $('#email').css({
+                    'border': '3px solid red'
+                });
+            }
+        }
+
+        function check_cemail() {
+            var email = $('#email').val();
+            var cemail = $('#cemail').val();
+            if (cemail.trim() && cemail == email) {
+                $('.alertcmail').removeClass('popup');
+                $('.alertcmail>span').text('Email is not matching');
+                $('#cemail').css({
+                    'border': '3px solid #1ed760'
+                });
+            }
+
+
+            else {
+                $('.alertcmail').addClass('popup');
+                $('#cemail').css({
+                    'border': '3px solid red'
+                });
+            }
+        }
+
+        function check_uname() {
+
+            var uname = $('#uname').val();
+            if (uname.trim() && uname !== "") {
+                $('.alertuname').removeClass('popup');
+                $('#uname').css({
+                    'border': '3px solid #1ed760'
+                })
+            }
+
+
+            else {
+                $('.alertuname').addClass('popup');
+                $('#uname').css({
+                    'border': '3px solid red'
+                })
+            }
+        }
+
+        function check_pass() {
+
+            var pass = $('#pass').val();
+            var pass_length = $('#pass').val().length;
+
+            if (pass.trim() && pass !== "") {
+                $('.alertpass').removeClass('popup');
+                $('#pass').css({
+                    'border': '3px solid #1ed760'
+                });
+
+
+                if (pass_length < 6) {
+                    $('.alertpass > span').text('Password must be atleast 6 characters');
+                    $('.alertpass').addClass('popup');
+                    $('#pass').css({
+                        'border': '3px solid red'
+                    });
+                }
+            }
+
+            else {
+                $('.alertpass').addClass('popup');
+                $('#pass').css({
+                    'border': '3px solid red'
+                })
+            }
+
+        }
+
+        function check_year() {
+
+            var varudam = $('#year').val();
+            var varudam_length = $('#year').val().length;
+
+            if (varudam.trim() && varudam !== "" && varudam_length <= 0 || varudam_length === 4) {
+                $('.alertyear').removeClass('popup');
+                $('#year').css({
+                    'border': '3px solid #1ed760'
+                })
+            }
+
+
+            else {
+                $('.alertyear').addClass('popup');
+                $('#year').css({
+                    'border': '3px solid red'
+                })
+            }
+        }
+
+        function check_month() {
+
+            var maatham = $('#month').val();
+
+            if (maatham !== '0') {
+                $('.alertmonth').removeClass('popup');
+                $('#month').css({
+                    'border': '3px solid #1ed760'
+                })
+            }
+
+
+            else {
+                $('.alertmonth').addClass('popup');
+                $('#month').css({
+                    'border': '3px solid red'
+                })
+            }
+        }
+
+        function check_date() {
+
+            var naal = $('#date').val();
+            var naal_length = $('#date').val().length;
+
+            if (naal.trim() && naal !== "" && naal_length <= 0 || naal_length === 2) {
+                $('.alertdate').removeClass('popup');
+                $('#date').css({
+                    'border': '3px solid #1ed760'
+                })
+            }
+
+
+            else {
+                $('.alertdate').addClass('popup');
+                $('#date').css({
+                    'border': '3px solid red'
+                })
+            }
+        }
+
+        function check_gender() {
+
+            var gender = $("input[name='gender']:checked").val();
+
+            if (gender) {
+                $('.alertgender').addClass('popup');
+
+                // if (gender !== true) {
+                //     $('.alertgender').css({
+                //         'color': 'red'
+                //     });
+
+                //     $('.alertgender').text(<p class="alertyear"><i class="fas fa-times" style="margin-right: 5px;"></i> <span>Select a gender.</span></p>)
+
+                // }
+            }
+
+
+            else {
+                $('.alertgender').removeClass('popup');
+
+            }
+        }
+
+
+
+
+
+
+
+
+    })
+
+</script>
+
+</html>
