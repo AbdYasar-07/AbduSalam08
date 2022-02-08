@@ -1,0 +1,14 @@
+*{
+    font-family: 'quicksand',sans-serif ;
+    transition: all .3s;
+}
+.fade-in{
+    transition: all .3s !important;
+}
+*::-webkit-scrollbar{
+    width: 2px;
+    height: 2px;
+    background-color: Orange;
+    border-radius: 30px;
+}
+
