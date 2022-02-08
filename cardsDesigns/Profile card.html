@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #060a29;
+            overflow-x: hidden;
+            min-width: 280px;
+        }
+
+        .row1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 100vh;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        * {
+            color: #fff;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+            outline: none;
+        }
+
+        .card {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 7px;
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-drag: none;
+            transition: all .3s;
+            transform: scale(0.9);
+        }
+
+        .card .img {
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transform: scale(0.97);
+        }
+
+        .card .img img {
+            border-radius: 7px;
+            transition: all .3s;
+            object-fit: fill;
+            width: 100%;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            background-size: 100%;
+            position: absolute;
+        }
+
+        .card .name,
+        .sml {
+            position: absolute;
+            bottom: -30%;
+        }
+
+        .name {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            transition: all .4s;
+            opacity: 0;
+        }
+
+        .name h2 {
+            margin-top: 10px;
+            transition: all .5s;
+        }
+
+        .name h4 {
+            margin-top: -10px;
+            font-weight: 500;
+            transition: all .6s;
+        }
+
+        .sml {
+            transition: all.7s;
+            opacity: 0;
+
+        }
+
+        .sml a {
+            text-decoration: none;
+        }
+
+        .sml a i {
+            transform: scale(1.6);
+            margin: 0px 12px;
+            border-radius: 50px;
+            text-align: center;
+            transition: all .7s;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .sml a i:hover {
+            transform: scale(1.6) rotate(360deg);
+        }
+
+        .sml a i:hover {
+            color: #fff;
+        }
+
+        .sml a .fa-twitter:hover {
+            background-color: #0099ff;
+        }
+
+        .sml a .fa-facebook:hover {
+            background-color: #1c2caa;
+        }
+
+        .sml a .fa-instagram:hover {
+            background-color: rgb(251, 42, 112);
+        }
+
+        .fa-facebook {
+            color: #1c2caa;
+            padding: 5px;
+
+        }
+
+        .fa-instagram {
+            padding: 5px 6px;
+            color: rgb(251, 42, 112);
+        }
+
+        .fa-twitter {
+            padding: 5px;
+            color: #0099ff;
+        }
+
+
+
+        /* hover at Card */
+
+        .card:hover img {
+            transform: scale(0.7);
+            margin-top: -150px;
+            width: 200px;
+        }
+
+        .card:hover .name {
+            bottom: 10%;
+            opacity: 1;
+        }
+
+
+        .card:hover .sml {
+            bottom: 10%;
+            opacity: 1;
+        }
+
+        /* box */
+
+        .box {
+            position: absolute;
+            left: 30%;
+            top: 10%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #0099ff;
+            transition: all .3s;
+        }
+
+        .box2 {
+            position: absolute;
+            left: 54%;
+            top: 52%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border-top-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            background-color: #ff00ff;
+            transition: all .3s;
+        }
+
+        /* media Query */
+        @media (max-width:500px) {
+            .card {
+                transform: scale(0.6);
+            }
+
+            .box {
+                left: 0;
+            }
+
+            .row1 {
+                height: 80vh;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="box">
+    </div>
+
+    <div class="box2">
+    </div>
+
+    <div class="row1">
+
+        <div class="card">
+
+
+            <div class="img">
+                <img src="/YSI SRMS Project/cofounder.jpg">
+            </div>
+
+            <div class="name">
+                <h2>Abdul salam K</h2>
+                <h4>Web Designer</h4>
+            </div>
+
+            <div class="sml">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+
+            <div class="img">
+                <img src="/YSI SRMS Project/yasarlogo.JPG">
+            </div>
+
+            <div class="name">
+                <h2>Abdul yasar K</h2>
+                <h4>Web Developer</h4>
+            </div>
+
+            <div class="sml">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+
+            <div class="img">
+                <img src="/YSI SRMS Project/0ca6f3a3d5e621113a1f9c3b4f61d784.jpg">
+            </div>
+
+            <div class="name">
+                <h2>Tony Stark H</h2>
+                <h4>UI/UX Designer</h4>
+            </div>
+
+            <div class="sml">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+
+<style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+        background-color: rgb(3, 3, 26);
+        color: white;
+    }
+
+    body::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: #17a2b8;
+        clip-path: circle(40% at right 100%);
+        z-index: -5;
+    }
+
+    *::selection {
+        background-color: #17a2b8;
+    }
+
+    * {
+        transition: all .5s;
+    }
+
+    .container {
+        min-width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .testimonialcard {
+        background-color: rgb(8, 8, 54);
+        width: 300px;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-radius: 5px;
+    }
+
+
+
+    .testimonialcard::before {
+        content: '';
+        position: absolute;
+        top: 0%;
+        left: 0;
+        width: 1px;
+        height: 15px;
+        background-color: #17a2b8;
+        border-radius: 2px;
+        transition: all .8s;
+    }
+
+    .testimonialcard::after {
+        content: '';
+        position: absolute;
+        top: 0%;
+        right: 0;
+        width: 1px;
+        height: 15px;
+        background-color: #17a2b8;
+        border-radius: 2px;
+        transition: all .8s;
+
+    }
+
+
+    .testimonialcard .prof {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        top: -13%;
+    }
+
+    .prof img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 8px solid rgb(3, 3, 26);
+        box-shadow: 0px 0px 10px rgb(3, 3, 26);
+    }
+
+    .prof p {
+        font-size: 20px;
+        font-weight: bolder;
+        letter-spacing: 3px;
+        margin-top: 5px;
+    }
+
+    .testimonialcard .content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin-top: 60px;
+        width: 100%;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 14px;
+        height: 220px;
+    }
+
+    .content .fa-quote-left {
+        font-size: 35px;
+        color: #17a2b8;
+        margin-bottom: 10px;
+    }
+
+    .content .fa-quote-right {
+        font-size: 35px;
+        margin-left: auto;
+        color: #17a2b8;
+    }
+
+    .links {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+    }
+
+    .links .sml {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .sml i {
+        border: 1px solid #17a2b8;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        color: #17a2b8;
+        margin: 0px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .stars {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .stars i {
+        font-size: 12px;
+        margin: 0px 3px;
+    }
+
+    .stars i:nth-child(1) {
+        color: #17a2b8;
+    }
+
+    .stars i:nth-child(2) {
+        color: #17a2b8;
+    }
+
+    .stars i:nth-child(3) {
+        color: #17a2b8;
+    }
+
+    .stars i:nth-child(4) {
+        color: #17a2b8;
+    }
+
+    .stars i:nth-child(5) {
+        color: #17a2b8;
+    }
+
+    .boxtopright {
+        width: 15px;
+        height: 1px;
+        background-color: #17a2b8;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 2px;
+    }
+
+
+    .boxbottomleft {
+        width: 15px;
+        height: 1px;
+        background-color: #17a2b8;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 2px;
+        transition: all .8s;
+
+    }
+
+    .boxbottomright {
+        width: 15px;
+        height: 1px;
+        background-color: #17a2b8;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius: 2px;
+        transition: all .8s;
+
+    }
+
+
+    .boxbottomb {
+        width: 15px;
+        height: 1px;
+        background-color: #17a2b8;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 2px;
+        transition: all .8s;
+
+    }
+
+
+    .boxtopleft {
+        width: 1px;
+        height: 15px;
+        background-color: #17a2b8;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius: 2px;
+        transition: all .8s;
+
+    }
+
+
+    .boxbottoml {
+        width: 1px;
+        height: 15px;
+        background-color: #17a2b8;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 2px;
+        transition: all .8s;
+
+    }
+
+    /* hover effects */
+
+    .links .sml i:hover {
+        background-color: rgba(240, 248, 255, 0.100);
+    }
+
+    .testimonialcard:hover::before {
+        height: 100%;
+        width: 1px;
+        border-radius: 2px;
+    }
+
+    .testimonialcard:hover::after {
+        height: 100%;
+        width: 1px;
+        border-radius: 2px;
+    }
+
+    .testimonialcard:hover .boxbottomleft {
+        width: 100%;
+        height: 1px;
+    }
+
+    .testimonialcard:hover .boxtopright {
+        width: 100%;
+        height: 1px;
+    }
+
+    .testimonialcard:hover .boxbottomright {
+        width: 100%;
+        height: 1px;
+    }
+
+    .testimonialcard:hover .boxbottomb {
+        width: 100%;
+        height: 1px;
+    }
+
+    .testimonialcard:hover .boxtopleft {
+        height: 100%;
+        width: 1px;
+    }
+
+    .testimonialcard:hover .boxbottoml {
+        height: 100%;
+        width: 1px;
+    }
+
+
+    /* Responsive */
+
+
+    @media (max-width:1150px) {
+        .testimonialcard {
+            transform: scale(.9);
+            margin-top: 50px;
+        }
+    }
+
+
+    @media (max-width:550px) {
+        .testimonialcard {
+            transform: scale(.8);
+            margin-top: 0px;
+        }
+    }
+</style>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="testimonialcard">
+
+            <!-- corner border properties -->
+
+
+            <div class="boxtopright"></div>
+            <div class="boxbottomleft"></div>
+            <div class="boxbottomright"></div>
+            <div class="boxbottomb"></div>
+            <div class="boxtopleft"></div>
+            <div class="boxbottoml"></div>
+
+            <!-- corner border properties Ends-->
+
+
+            <!-- Content Part Starts... -->
+
+            <div class="prof">
+                <img src="/YSI SRMS Project/cofounder.jpg">
+                <p>Abdul salam</p>
+            </div>
+
+            <div class="content">
+                <i class="fas fa-quote-left"></i>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quibusdam inventore nam ducimus! Quam
+                    minima.</p>
+                <i class="fas fa-quote-right"></i>
+            </div>
+
+            <div class="links">
+                <div class="sml">
+
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin-in"></i>
+
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="testimonialcard">
+
+            <!-- corner border properties -->
+            <div class="boxtopright"></div>
+            <div class="boxbottomleft"></div>
+            <div class="boxbottomright"></div>
+            <div class="boxbottomb"></div>
+            <div class="boxtopleft"></div>
+            <div class="boxbottoml"></div>
+
+            <!-- corner border properties Ends-->
+
+
+            <!-- Content Part Starts... -->
+
+            <div class="prof">
+                <img src="/YSI SRMS Project/home1.jpg">
+                <p>Edie Brock</p>
+            </div>
+
+            <div class="content">
+                <i class="fas fa-quote-left"></i>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit..</p>
+                <i class="fas fa-quote-right"></i>
+            </div>
+
+            <div class="links">
+                <div class="sml">
+
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin-in"></i>
+
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="testimonialcard">
+
+
+            <!-- corner border properties -->
+
+
+            <div class="boxtopright"></div>
+            <div class="boxbottomleft"></div>
+            <div class="boxbottomright"></div>
+            <div class="boxbottomb"></div>
+            <div class="boxtopleft"></div>
+            <div class="boxbottoml"></div>
+
+            <!-- corner border properties Ends-->
+
+
+            <!-- Content Part Starts... -->
+
+            <div class="prof">
+                <img src="/YSI SRMS Project/0ca6f3a3d5e621113a1f9c3b4f61d784.jpg">
+                <p>Howard Stark</p>
+            </div>
+
+            <div class="content">
+                <i class="fas fa-quote-left"></i>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab quibusdam inventore nam ducimus! Quam
+                    minima, suscipit laboriosam asperiores modi dignissimos ad commodi nemo, neque animi corporis
+                    numquam,
+                    tenetur sapiente ipsum.</p>
+                <i class="fas fa-quote-right"></i>
+            </div>
+
+            <div class="links">
+                <div class="sml">
+
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin-in"></i>
+
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
